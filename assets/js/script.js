@@ -157,3 +157,9 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+$(document).ready(function(){
+  $(".form-btn1").click(function(){
+    window.open('assets/usman-resume.pdf');
+  });
+});

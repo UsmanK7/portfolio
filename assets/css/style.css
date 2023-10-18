@@ -1369,6 +1369,16 @@ textarea.form-input::-webkit-resizer {
   z-index: 1;
   transition: var(--transition-1);
 }
+.download-resume{
+  position: relative;
+  
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-6);
+  text-transform: capitalize;
+  box-shadow: var(--shadow-3);
+  z-index: 1;
+  transition: var(--transition-1);
+}
 
 
 .form-btn::before {
