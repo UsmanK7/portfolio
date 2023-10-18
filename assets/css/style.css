@@ -1352,6 +1352,24 @@ textarea.form-input::-webkit-resizer {
   z-index: 1;
   transition: var(--transition-1);
 }
+.form-btn1 {
+  position: relative;
+  
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  text-transform: capitalize;
+  box-shadow: var(--shadow-3);
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
 
 .form-btn::before {
   content: "";
