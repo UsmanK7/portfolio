@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usman Khan - Computer Scientist Portfolio</title>
+    <link rel="icon" href="assets/images/profile.jpeg">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Desktop Sidebar -->
+    <div class="sidebar d-lg-block d-none">
+        <div class="text-center">
+            <img src="assets/images/profile.jpeg" alt="Profile Picture" class="profile-img mb-3">
+            <h2>Usman Khan</h2>
+            <div class="title">Computer Scientist</div>
+        </div>
+
+        <ul class="contact-info">
+            <li>
+                <i class="bi bi-geo-alt"></i>
+                <span>Islamabad, Pakistan</span>
+            </li>
+            <li>
+                <i class="bi bi-envelope"></i>
+                <a href="mailto:musmankhan707@gmail.com">musmankhan707@gmail.com</a>
+            </li>
+            <li>
+                <i class="bi bi-github"></i>
+                <a href="https://github.com/UsmanK7" target="_blank">github.com/UsmanK7</a>
+            </li>
+            <li>
+                <i class="bi bi-linkedin"></i>
+                <a href="https://www.linkedin.com/in/usman-ai/" target="_blank">LinkedIn Profile</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- Mobile Top Bar -->
+    <div class="mobile-topbar">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <img src="../../assets/images/profile.jpeg" alt="Profile Picture" class="mobile-profile-img me-3">
+                <div>
+                    <h5 class="mb-0 fw-bold">Muhammad Usman Khan</h5>
+                    <small class="text-muted">Computer Scientist</small>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="follow-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Follow
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="mailto:john.doe@example.com"><i
+                                class="bi bi-envelope me-2"></i>Email</a></li>
+                    <li><a class="dropdown-item" href="https://linkedin.com/in/johndoe" target="_blank"><i
+                                class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
+                    <li><a class="dropdown-item" href="https://github.com/johndoe" target="_blank"><i
+                                class="bi bi-github me-2"></i>GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- About Section -->
+        <section class="about-section">
+            <h1>Welcome to My Portfolio</h1>
+            <p class="lead">
+                I'm a passionate Computer Scientist with expertise in artificial intelligence, machine learning, and
+                software development.
+                I love solving complex problems through innovative technological solutions and contributing to
+                cutting-edge research
+                that makes a real-world impact.
+            </p>
+
+            <div class="research-interests">
+                <h3><i class="bi bi-lightbulb me-2"></i>Research Interests</h3>
+                <p class="mb-2">
+                    My research focuses on the intersection of artificial intelligence and healthcare, with particular
+                    emphasis on:
+                </p>
+                <ul class="mb-0">
+                    <li><strong>Medical Imaging:</strong> Developing deep learning models for automated diagnosis and
+                        treatment planning</li>
+                    <li><strong>Natural Language Processing:</strong> Creating AI systems that understand and generate
+                        human language</li>
+                    <li><strong>Computer Vision:</strong> Building intelligent systems that can interpret and analyze
+                        visual information</li>
+                    <li><strong>Machine Learning:</strong> Designing algorithms that learn and adapt from data</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section">
+            <h1 class="section-title">Projects</h1>
+
+            <!-- Search and Filter -->
+            <div class="search-filter-container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control search-input" id="searchInput"
+                            placeholder="Search projects...">
+                    </div>
+                </div>
+                <div class="filter-tags">
+                    <span class="tag-filter active" data-tag="all">All Projects</span>
+                    <span class="tag-filter" data-tag="medical-imaging">Medical Imaging</span>
+                    <span class="tag-filter" data-tag="deep-learning">Deep Learning</span>
+                    <span class="tag-filter" data-tag="web-development">Web Development</span>
+                    <span class="tag-filter" data-tag="nlp">Natural Language Processing</span>
+                    <span class="tag-filter" data-tag="mobile-app">Mobile App</span>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="row" id="projectsContainer">
+                <!-- Project 1 -->
+                <div class="col-lg-6 project-item" data-tags="medical-imaging deep-learning">
+                    <a href="projects/neuro_insight/neuro_insight.html"
+                        class="hover-pointer text-decoration-none text-dark">
+                        <div class="project-card">
+                            <img src="projects/neuro_insight/images/1.png" alt="Brain MRI Analysis" class="project-img">
+                            <div class="project-content">
+                                <h5 class="project-title">Neuro Insight - Final year project</h5>
+                                <p class="project-description">Advanced deep learning system for automated brain tumor
+                                    detection and classification using convolutional neural networks. Achieved 94%
+                                    accuracy on validation dataset.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Deep Learning</span>
+                                    <span class="project-tag">Medical Imaging</span>
+                                    <span class="project-tag">CNN</span>
+                                    <span class="project-tag">TensorFlow</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/johndoe/brain-mri-detection" target="_blank"><i
+                                            class="bi bi-github me-2"></i>GitHub</a>
+                                    <a href="#" target="_blank"><i class="bi bi-link me-2"></i>Project details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-lg-6 project-item" data-tags="nlp deep-learning">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=200&fit=crop"
+                            alt="Clinical NLP" class="project-img">
+                        <div class="project-content">
+                            <a href="project-clinical-nlp.html" class="project-title">Clinical Text Analysis
+                                Platform</a>
+                            <p class="project-description">NLP platform for extracting medical insights from clinical
+                                notes using transformer models. Processes thousands of documents with high accuracy for
+                                clinical decision support.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">NLP</span>
+                                <span class="project-tag">Transformers</span>
+                                <span class="project-tag">Healthcare</span>
+                                <span class="project-tag">Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/johndoe/clinical-nlp" target="_blank"><i
+                                        class="fab fa-github me-1"></i>GitHub</a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt me-1"></i>Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-lg-6 project-item" data-tags="web-development">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=200&fit=crop"
+                            alt="Health Dashboard" class="project-img">
+                        <div class="project-content">
+                            <a href="project-health-dashboard.html" class="project-title">Healthcare Analytics
+                                Dashboard</a>
+                            <p class="project-description">Interactive web dashboard for healthcare analytics with
+                                real-time data visualization, patient monitoring, and predictive insights using modern
+                                web technologies.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">D3.js</span>
+                                <span class="project-tag">Healthcare</span>
+                                <span class="project-tag">Analytics</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/johndoe/health-dashboard" target="_blank"><i
+                                        class="fab fa-github me-1"></i>GitHub</a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt me-1"></i>Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-lg-6 project-item" data-tags="mobile-app deep-learning">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=200&fit=crop"
+                            alt="Medical App" class="project-img">
+                        <div class="project-content">
+                            <a href="project-medical-app.html" class="project-title">AI-Powered Medical Assistant
+                                App</a>
+                            <p class="project-description">Mobile application that uses AI to help users identify
+                                potential health issues through symptom analysis and image recognition. Features offline
+                                capability and privacy-first design.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Mobile App</span>
+                                <span class="project-tag">AI</span>
+                                <span class="project-tag">Flutter</span>
+                                <span class="project-tag">TensorFlow Lite</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/johndoe/medical-assistant-app" target="_blank"><i
+                                        class="fab fa-github me-1"></i>GitHub</a>
+                                <a href="#" target="_blank"><i class="fas fa-mobile-alt me-1"></i>App Store</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-lg-6 project-item" data-tags="medical-imaging deep-learning">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1581595220975-119360b2471e?w=500&h=200&fit=crop"
+                            alt="Radiology AI" class="project-img">
+                        <div class="project-content">
+                            <a href="project-radiology-ai.html" class="project-title">Radiology Image Enhancement
+                                System</a>
+                            <p class="project-description">Advanced AI system for enhancing radiology images and
+                                assisting radiologists in diagnosis. Uses state-of-the-art image processing and deep
+                                learning techniques.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Radiology</span>
+                                <span class="project-tag">Image Processing</span>
+                                <span class="project-tag">Deep Learning</span>
+                                <span class="project-tag">PyTorch</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/johndoe/radiology-enhancement" target="_blank"><i
+                                        class="fab fa-github me-1"></i>GitHub</a>
+                                <a href="#" target="_blank"><i class="fas fa-file-pdf me-1"></i>Research Paper</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="col-lg-6 project-item" data-tags="web-development nlp">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=200&fit=crop"
+                            alt="Data Analysis" class="project-img">
+                        <div class="project-content">
+                            <a href="project-research-platform.html" class="project-title">Medical Research Data
+                                Platform</a>
+                            <p class="project-description">Comprehensive platform for medical researchers to analyze
+                                large datasets, perform statistical analysis, and collaborate on research projects.
+                                Features automated report generation and data visualization.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Research</span>
+                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Statistics</span>
+                                <span class="project-tag">Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/johndoe/research-platform" target="_blank"><i
+                                        class="fab fa-github me-1"></i>GitHub</a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt me-1"></i>Live
+                                    Platform</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="text-center mt-5 d-none" id="noResults">
+                <h4>No projects found</h4>
+                <p>Try adjusting your search terms or filters.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Bootstrap 5 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

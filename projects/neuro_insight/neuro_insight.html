@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain MRI Tumor Detection - Project</title>
+  <!-- Bootstrap 5 CSS -->
+  <link rel="icon" href="../../assets/images/profile.jpeg">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+
+</head>
+
+<body>
+  <!-- Desktop Sidebar -->
+  <div class="sidebar d-lg-block d-none">
+    <div class="text-center">
+      <img src="../../assets/images/profile.jpeg" alt="Profile Picture" class="profile-img mb-3">
+      <h2>Usman Khan</h2>
+      <div class="title">Computer Scientist</div>
+    </div>
+
+    <ul class="contact-info">
+      <li>
+        <i class="bi bi-geo-alt"></i>
+        <span>Islamabad, Pakistan</span>
+      </li>
+      <li>
+        <i class="bi bi-envelope"></i>
+        <a href="mailto:musmankhan707@gmail.com">musmankhan707@gmail.com</a>
+      </li>
+      <li>
+        <i class="bi bi-github"></i>
+        <a href="https://github.com/UsmanK7" target="_blank">github.com/UsmanK7</a>
+      </li>
+      <li>
+        <i class="bi bi-linkedin"></i>
+        <a href="https://www.linkedin.com/in/usman-ai/" target="_blank">LinkedIn Profile</a>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- Mobile Top Bar -->
+  <div class="mobile-topbar">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <img src="../../assets/images/profile.jpeg" alt="Profile Picture" class="mobile-profile-img me-3">
+        <div>
+          <h5 class="mb-0 fw-bold">Muhammad Usman Khan</h5>
+          <small class="text-muted">Computer Scientist</small>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="follow-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Follow
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="mailto:john.doe@example.com"><i class="bi bi-envelope me-2"></i>Email</a>
+          </li>
+          <li><a class="dropdown-item" href="https://linkedin.com/in/johndoe" target="_blank"><i
+                class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
+          <li><a class="dropdown-item" href="https://github.com/johndoe" target="_blank"><i
+                class="bi bi-github me-2"></i>GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Back to Home Button -->
+    <div class="mb-4">
+      <a href="../../index.html" class="btn btn-outline-primary">← Back to Home</a>
+    </div>
+    <!-- Carousel -->
+    <div id="projectCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/1.png" class="d-block w-100" alt="Slide 1">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Screen 1 - Dashboard View</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/mri-upload-model.png" class="d-block w-100" alt="Slide 2">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Screen 2 - Modal to upload 3D Mris</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/3.png" class="d-block w-100" alt="Slide 3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Screen 3 - MRI Uploaded</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/4.png" class="d-block w-100" alt="Slide 3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Screen 4 - Inference generated</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/5.png" class="d-block w-100" alt="Slide 3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Screen 5 - Report generated</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/6.png" class="d-block w-100" alt="Slide 3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Screen 6 - Report in PDF</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/7.png" class="d-block w-100" alt="Slide 3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>screen 7 - Home page</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/8.png" class="d-block w-100" alt="Slide 3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Screen 8 - Teams page</h5>
+          </div>
+        </div>
+        <!-- Repeat for the rest with custom labels -->
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- Project Title -->
+    <h2 class="fw-bold mb-3">Neuro Insight - Final year project</h2>
+
+    <!-- Project Overview Section -->
+    <section class="mb-5">
+      <h2 class="section-header">Project Overview</h2>
+      <div class="row">
+        <div class="col-lg-8">
+          <p class="lead">NeuroInsight is a medical web application designed to assist doctors in diagnosing glioma
+            brain tumors from MRI scans using deep learning.</p>
+          <p>It automates:</p>
+          <ul>
+            <li><strong>Tumor detection</strong> (presence/absence)</li>
+            <li><strong>Multi-region segmentation</strong> (edema, necrotic core, enhancing tumor)</li>
+            <li><strong>Grade classification</strong> (High-Grade vs. Low-Grade Glioma)</li>
+            <li><strong>PDF report generation</strong> for clinical use</li>
+          </ul>
+          <p>Built with Django (Python) and state-of-the-art AI models, it bridges the gap between research and clinical
+            practice by offering a non-technical user interface for medical professionals.</p>
+
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Project Highlights</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Classification Accuracy
+                  <span class="badge bg-primary rounded-pill">98.7%</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Segmentation Dice Score
+                  <span class="badge bg-primary rounded-pill">0.99</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Diagnosis Time Reduction
+                  <span class="badge bg-primary rounded-pill">Hours → Seconds</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="mb-5">
+      <h2 class="section-header">Key Features</h2>
+      <div class="row g-4">
+        <!-- AI-Driven Analysis Card -->
+        <div class="col-md-4">
+          <div class="card h-100 feature-card shadow-sm">
+            <div class="card-body">
+              <h4 class="card-title"><i class="bi bi-cpu me-2"></i>AI-Driven Analysis</h4>
+              <ul>
+                <LI><Strong>I have trained two deep learning models for this project</Strong></LI>
+                <li><strong>Segmentation Model:</strong> Attention U-Net model do segmentation of brain tumor in 4 labels</li>
+                <li><strong>Classification Model:</strong> ConvNeXt-Base  classifies tumors as HGG
+                  (aggressive) or LGG (slow-growing)</li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- User-Centric Design Card -->
+        <div class="col-md-4">
+          <div class="card h-100 feature-card shadow-sm">
+            <div class="card-body">
+              <h4 class="card-title"><i class="bi bi-person-circle me-2"></i>User-Centric Design</h4>
+              <ul>
+                <li>Secure login (Django authentication)</li>
+                <li>Interactive dashboard to upload scans, view segmented masks, and download reports</li>
+                <li>SQLite database for storing patient reports</li>
+                <li>Intuitive interface for medical professionals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clinical Utility Card -->
+        <div class="col-md-4">
+          <div class="card h-100 feature-card shadow-sm">
+            <div class="card-body">
+              <h4 class="card-title"><i class="bi bi-heart-pulse me-2"></i>Clinical Utility</h4>
+              <ul>
+                <li>Reduces manual diagnosis time from hours to seconds</li>
+                <li>Addresses limitations of existing tools (e.g., single-task focus, technical complexity)</li>
+                <li>Comprehensive PDF reports for clinical documentation</li>
+                <li>Supports decision-making for treatment planning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Technical Implementation Section -->
+    <section class="mb-5">
+      <h2 class="section-header">Technical Implementation</h2>
+
+      <!-- Data Splitting Strategy -->
+      <div class="mb-4">
+        <h3>Data Splitting Strategy</h3>
+        <p>To train and evaluate our model effectively we split our dataset into three parts:</p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Initial Split</h5>
+                <ul>
+                  <li>70% of the data for training</li>
+                  <li>30% of the data reserved for testing and validation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Second Split</h5>
+                <ul>
+                  <li>15% for testing (from the 30% reserved)</li>
+                  <li>15% for validation (from the 30% reserved)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><strong>Stratified Splitting:</strong> Used to preserve the distribution of High-Grade Glioma (HGG) and
+          Low-Grade Glioma (LGG) samples in each set and avoid class imbalance issues.</p>
+
+      </div>
+
+      <!-- Data Preprocessing Pipeline -->
+      <div class="mb-4">
+        <h3>Data Preprocessing Pipeline</h3>
+        <p>High resolution 3D MRI scans consume significant memory, so we implemented a data generator with
+          preprocessing steps for memory efficiency:</p>
+
+        <div class="row g-4">
+          <!-- Z-score Normalization -->
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Z-score Normalization</h5>
+                <p>Transforms data to have a mean of 0 and standard deviation of 1, important for medical imaging where
+                  pixel values can range widely (e.g., max value 1273.0).</p>
+                <div class="bg-light p-3 rounded">
+                  <code>Formula: z = (x - μ) / σ</code>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slice Selection -->
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Slice Selection</h5>
+                <p>The generator uses slices restricted by a range (default 50 to 130) to reduce memory use and focus on
+                  diagnostically relevant slices.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- One Hot Encoding -->
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">One Hot Encoding</h5>
+                <p>Segmentation mask is resized to 128x128 pixels, and one-hot encoding is applied to create a
+                  categorical mask with 4 classes.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mask Processing -->
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Segmentation Mask Processing</h5>
+                <p>The '__load_segmentation' function loads the segmentation mask and converts all class 4 labels into
+                  class 3 to simplify model training.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <img src="images/one-hot.png" class="img-fluid" alt="One-hot encoded segmentation" style="max-width: 600px;"> 
+      </div>
+
+      <!-- Model Architecture -->
+      <div class="mb-4 model-architecture p-4">
+        <h3>Model Architecture: Attention U-Net for Tumor Segmentation</h3>
+        <p>Our project employs a modified U-Net architecture integrated with attention gates, inspired from the paper
+          "Attention U-Net: Learning Where to Look for the Pancreas" (Oktay, 2018).</p>
+
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="table-primary">
+              <tr>
+                <th>Component</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Input</td>
+                <td>128 × 128 × 2 (FLAIR and T1CE MRI slices)</td>
+              </tr>
+              <tr>
+                <td>Encoder</td>
+                <td>3 blocks of Conv2D (ReLU) + MaxPooling with filters: 32 → 64 → 128</td>
+              </tr>
+              <tr>
+                <td>Bottleneck</td>
+                <td>2 Conv2D layers with 256 filters each</td>
+              </tr>
+              <tr>
+                <td>Attention Gates</td>
+                <td>Applied before each decoder skip connection (128, 64, 32 filters)</td>
+              </tr>
+              <tr>
+                <td>Decoder</td>
+                <td>3 UpSampling blocks with Conv2D layers and concatenated attention features</td>
+              </tr>
+              <tr>
+                <td>Output Layer</td>
+                <td>1 × 1 Conv2D + Softmax (for 4-class segmentation)</td>
+              </tr>
+              <tr>
+                <td>Loss Function</td>
+                <td>Categorical Crossentropy</td>
+              </tr>
+              <tr>
+                <td>Optimizer</td>
+                <td>Adam (learning rate = 0.001)</td>
+              </tr>
+              <tr>
+                <td>Batch Size</td>
+                <td>2 (used for memory efficiency)</td>
+              </tr>
+              <tr>
+                <td>Precision Mode</td>
+                <td>Mixed Precision Training (float16)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Model Evaluation -->
+      <div class="mb-4">
+        <h3>Model Evaluation</h3>
+        <p>The trained model was tested on unseen data to evaluate performance:</p>
+
+        <div class="row g-4 mb-4">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Comparison with Ground Truth</h5>
+                <p>Comparison between expert-annotated segmented masks (BraTS dataset) and our model's predictions
+                  showed excellent similarity.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Performance Metrics</h5>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-primary metric-badge">Accuracy: 0.9930</span>
+                  <span class="badge bg-primary metric-badge">Mean IoU: 0.5000</span>
+                  <span class="badge bg-primary metric-badge">Dice Coefficient: 0.9947</span>
+                  <span class="badge bg-primary metric-badge">Precision: 0.9938</span>
+                  <span class="badge bg-primary metric-badge">Sensitivity: 0.9924</span>
+                  <span class="badge bg-primary metric-badge">Loss: 0.0216</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Links -->
+    <div class="d-flex gap-3 mb-5">
+      <a href="https://github.com/your-repo" class="btn btn-primary px-4" target="_blank">
+        <i class="bi bi-github me-2"></i>View Code
+      </a>
+      <a href="#" class="btn btn-outline-primary px-4">
+        <i class="bi bi-file-earmark-text me-2"></i>Research Paper
+      </a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="../../js/script.js"></script>
+</body>
+
+</html>
