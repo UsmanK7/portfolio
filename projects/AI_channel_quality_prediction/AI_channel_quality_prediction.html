@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Channel Quality Prediction - Project</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="icon" href="../../assets/images/profile.jpeg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        .code-block {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: #3498db;
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .performance-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .architecture-diagram {
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .tech-badge {
+            background: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .metric-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #3498db;
+        }
+
+        .btn-colors {
+            background: #3498db;
+            color: white;
+            border: 2px solid #3498db;
+        }
+
+        .btn-colors:hover {
+            background: #226794;
+            color: white;
+
+        }
+
+        .bg-custom {
+            background: #3498db;
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Desktop Sidebar -->
+    <div class="sidebar d-lg-block d-none">
+        <div class="text-center">
+            <img src="../../assets/images/profile.jpeg" alt="Profile Picture" class="profile-img mb-3">
+            <h2>Usman Khan</h2>
+            <div class="title">Computer Scientist</div>
+        </div>
+
+        <ul class="contact-info">
+            <li>
+                <i class="bi bi-geo-alt"></i>
+                <span>Islamabad, Pakistan</span>
+            </li>
+            <li>
+                <i class="bi bi-envelope"></i>
+                <a href="mailto:musmankhan707@gmail.com">musmankhan707@gmail.com</a>
+            </li>
+            <li>
+                <i class="bi bi-github"></i>
+                <a href="https://github.com/UsmanK7" target="_blank">github.com/UsmanK7</a>
+            </li>
+            <li>
+                <i class="bi bi-linkedin"></i>
+                <a href="https://www.linkedin.com/in/usman-ai/" target="_blank">LinkedIn Profile</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Mobile Top Bar -->
+    <div class="mobile-topbar">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <img src="../../assets/images/profile.jpeg" alt="Profile Picture" class="mobile-profile-img me-3">
+                <div>
+                    <h5 class="mb-0 fw-bold">Muhammad Usman Khan</h5>
+                    <small class="text-muted">Computer Scientist</small>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="follow-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Follow
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="mailto:musmankhan707@gmail.com"><i
+                                class="bi bi-envelope me-2"></i>Email</a></li>
+                    <li><a class="dropdown-item" href="https://www.linkedin.com/in/usman-ai/" target="_blank"><i
+                                class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
+                    <li><a class="dropdown-item" href="https://github.com/UsmanK7" target="_blank"><i
+                                class="bi bi-github me-2"></i>GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Back to Home Button -->
+        <div class="mb-4">
+            <a href="../../index.html" class="btn btn-outline-primary">← Back to Home</a>
+        </div>
+
+        <!-- Carousel -->
+        <div id="projectCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/cqi_classification_training_history.png" class="d-block w-100"
+                        alt="CQI Training History">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>CQI Classification Training History</h5>
+                        <p>Model convergence and validation accuracy over epochs</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/cqi_predictions.png" class="d-block w-100" alt="CQI Predictions">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>CQI Prediction Results</h5>
+                        <p>Actual vs predicted Channel Quality Indicator values</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/snr_db_predictions.png" class="d-block w-100" alt="SNR Predictions">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>SNR Prediction Results</h5>
+                        <p>Signal-to-Noise Ratio regression predictions</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/snr_regression_training_history.png" class="d-block w-100"
+                        alt="SNR Training History">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>SNR Regression Training History</h5>
+                        <p>Loss function optimization and model learning curves</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <h1 class="fw-bold mb-3">AI Channel Quality Prediction for 5G and Beyond Wireless Networks</h1>
+
+        <!-- Project Overview -->
+        <section class="mb-5">
+            <h2 class="section-header">Project Overview</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <p class="lead">This project implements advanced deep learning techniques for predicting wireless
+                        channel quality in 5G and Beyond (B5G) networks. The system focuses on two critical prediction
+                        tasks:</p>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>CQI
+                                Classification:</strong> Predicting Channel Quality Indicator (1-15 scale)</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>SNR Regression:</strong>
+                            Estimating Signal-to-Noise Ratio in dB</li>
+                    </ul>
+                </div>
+                <!-- <div class="col-lg-4">
+                    <div class="metric-card">
+                        <h4 class="text-primary mb-0">92.1%</h4>
+                        <small class="text-muted">CQI Accuracy</small>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section class="mb-5">
+            <h2 class="section-header">✅ Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h5><i class="bi bi-broadcast me-2"></i>5G/B5G Channel Modeling</h5>
+                    <p>Realistic wireless channel simulation using 3GPP standards and advanced propagation models</p>
+                </div>
+                <div class="feature-card">
+                    <h5><i class="bi bi-cpu me-2"></i>Multi-Architecture AI</h5>
+                    <p>MLP, CNN, Transformer, and Ensemble models for comprehensive prediction capabilities</p>
+                </div>
+                <div class="feature-card">
+                    <h5><i class="bi bi-graph-up me-2"></i>Advanced Analytics</h5>
+                    <p>Comprehensive visualization tools and performance analysis with production-ready code</p>
+                </div>
+                <div class="feature-card">
+                    <h5><i class="bi bi-people me-2"></i>Dynamic Scheduling</h5>
+                    <p>Real-time user scheduling demonstration and network optimization capabilities</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specifications -->
+        <section class="mb-5">
+            <h2 class="section-header">Technical Specifications</h2>
+            <div class="code-block">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Programming Language:</strong> Python 3.8+</p>
+                        <p><strong>Deep Learning Framework:</strong> TensorFlow/Keras 2.x</p>
+                        <p><strong>Dataset Size:</strong> 15,000 synthetic samples</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Features:</strong> 8 wireless network parameters</p>
+                        <p><strong>Models:</strong> 4 different architectures</p>
+                        <p><strong>Evaluation Metrics:</strong> Accuracy, MAE, MSE, R²</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Architecture -->
+        <section class="mb-5">
+            <h2 class="section-header">System Architecture</h2>
+            <div class="container mb-4">
+                <div class="row justify-content-center">
+                    <div class="col-12  text-center">
+                        <img src="images/Screenshot 2025-07-23 151135.png" class="img-fluid rounded shadow-sm"
+                            alt="One-hot encoded segmentation">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="architecture-diagram">
+                <h4>AI-POWERED CHANNEL PREDICTION SYSTEM</h4>
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <h6>📡 Data Generator</h6>
+                        <small>3GPP Models, Path Loss, Shadow Fading</small>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>🧠 AI Models</h6>
+                        <small>MLP, CNN, Transformer, Ensemble</small>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>📊 Analytics</h6>
+                        <small>Visualization, Metrics, Analysis</small>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>🎯 Applications</h6>
+                        <small>Scheduling, Optimization, QoS</small>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="mt-4">
+                <h5>Project Structure</h5>
+                <div class="code-block">
+                    <pre>project/
+├── main.py                 # Main execution script
+├── model.py               # Neural network architectures
+├── utils.py               # Data generation & visualization
+├── dataset.csv            # Generated synthetic dataset
+└── results/               # Output directory
+    ├── models/            # Trained model files
+    ├── plots/             # Visualization outputs
+    └── metrics/           # Performance results</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dataset Generation -->
+        <section class="mb-5">
+            <h2 class="section-header">Dataset Generation</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5>Wireless Channel Modeling</h5>
+                    <p>Implementation of state-of-the-art wireless propagation models based on 3GPP TR 38.901 standards:
+                    </p>
+
+                    <h6>Path Loss Models:</h6>
+                    <div class="code-block">
+                        <strong>Urban Micro (UMi) LOS:</strong><br>
+                        PL = 32.4 + 21×log₁₀(d) + 20×log₁₀(fc) [d ≤ 1000m]<br>
+                        PL = 32.4 + 40×log₁₀(d) + 20×log₁₀(fc) - 9.5 [d > 1000m]<br><br>
+                        <strong>Urban Micro (UMi) NLOS:</strong><br>
+                        PL = 35.3×log₁₀(d) + 22.4 + 21.3×log₁₀(fc) - 0.3×h_UT
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h5>Feature Engineering</h5>
+                    <div class="table-responsive">
+                        <table class="table table-striped performance-table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Range</th>
+                                    <th>Distribution</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>User Speed</td>
+                                    <td>0-300 km/h</td>
+                                    <td>Gamma/Normal</td>
+                                </tr>
+                                <tr>
+                                    <td>Distance to BS</td>
+                                    <td>10-5000 m</td>
+                                    <td>Exponential</td>
+                                </tr>
+                                <tr>
+                                    <td>Frequency</td>
+                                    <td>0.7-60 GHz</td>
+                                    <td>Discrete</td>
+                                </tr>
+                                <tr>
+                                    <td>LOS/NLOS</td>
+                                    <td>Categorical</td>
+                                    <td>Bernoulli</td>
+                                </tr>
+                                <tr>
+                                    <td>Power Level</td>
+                                    <td>20-50 dBm</td>
+                                    <td>Normal</td>
+                                </tr>
+                                <tr>
+                                    <td>Interference</td>
+                                    <td>-105 to -70 dB</td>
+                                    <td>Function</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="metric-card">
+                        <h4 class="text-primary mb-0">15,000</h4>
+                        <small class="text-muted">Total Samples</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="metric-card">
+                        <h4 class="text-success mb-0">8</h4>
+                        <small class="text-muted">Input Features</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="metric-card">
+                        <h4 class="text-warning mb-0">80/20</h4>
+                        <small class="text-muted">Train/Test Split</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Model Architectures -->
+        <section class="mb-5">
+            <h2 class="section-header">Model Architectures</h2>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-custom text-white">
+                            <h5 class="mb-0">1. Multi-Layer Perceptron (MLP)</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Purpose:</strong> CQI Classification</p>
+                            <div class="code-block">
+                                <div class="container mb-4">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center">
+                                            <img src="images/1.png" class="img-fluid rounded shadow-sm"
+                                                alt="One-hot encoded segmentation">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <span class="tech-badge">Residual Connections</span>
+                                <span class="tech-badge">Batch Normalization</span>
+                                <span class="tech-badge">AdamW Optimizer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-custom text-white">
+                            <h5 class="mb-0">2. 1D Convolutional Neural Network</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Purpose:</strong> SNR Regression</p>
+                            <div class="code-block">
+                                <div class="container mb-4">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center">
+                                            <img src="images/2.png" class="img-fluid rounded shadow-sm"
+                                                alt="One-hot encoded segmentation">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <span class="tech-badge">Dilated Convolutions</span>
+                                <span class="tech-badge">Global Pooling</span>
+                                <span class="tech-badge">Huber Loss</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-custom ">
+                            <h5 class="mb-0">3. Transformer Model</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Purpose:</strong> Advanced Architecture</p>
+                            <div class="code-block">
+                                <div class="container mb-4">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center">
+                                            <img src="images/3.png" class="img-fluid rounded shadow-sm"
+                                                alt="One-hot encoded segmentation">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <span class="tech-badge">Self-Attention</span>
+                                <span class="tech-badge">Layer Normalization</span>
+                                <span class="tech-badge">Positional Encoding</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-custom   ">
+                            <h5 class="mb-0">4. Ensemble Model</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Purpose:</strong> Combined Approach</p>
+                            <div class="code-block">
+                                <div class="container mb-4">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center">
+                                            <img src="images/4.png" class="img-fluid rounded shadow-sm"
+                                                alt="One-hot encoded segmentation">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <span class="tech-badge">Dual-Branch</span>
+                                <span class="tech-badge">Feature Fusion</span>
+                                <span class="tech-badge">Weighted Outputs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Analysis -->
+        <!-- <section class="mb-5">
+            <h2 class="section-header">📈 Performance Analysis</h2>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5>CQI Classification Results</h5>
+                    <div class="table-responsive">
+                        <table class="table table-striped performance-table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>Value</th>
+                                    <th>Interpretation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td class="text-success">92.1%</td>
+                                    <td>Excellent classification performance</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Precision</strong></td>
+                                    <td class="text-success">91.8%</td>
+                                    <td>Low false positive rate</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Recall</strong></td>
+                                    <td class="text-success">92.1%</td>
+                                    <td>Good detection of all CQI classes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>F1-Score</strong></td>
+                                    <td class="text-success">91.9%</td>
+                                    <td>Balanced precision-recall trade-off</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MAE</strong></td>
+                                    <td class="text-primary">0.45</td>
+                                    <td>Average error &lt; 0.5 CQI levels</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <h5>SNR Regression Results</h5>
+                    <div class="table-responsive">
+                        <table class="table table-striped performance-table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>Value</th>
+                                    <th>Interpretation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>MAE</strong></td>
+                                    <td class="text-success">1.82 dB</td>
+                                    <td>Average prediction error</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MSE</strong></td>
+                                    <td class="text-primary">5.23 dB²</td>
+                                    <td>Mean squared error</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>RMSE</strong></td>
+                                    <td class="text-primary">2.29 dB</td>
+                                    <td>Root mean squared error</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>R² Score</strong></td>
+                                    <td class="text-success">0.887</td>
+                                    <td>88.7% variance explained</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MAPE</strong></td>
+                                    <td class="text-warning">12.3%</td>
+                                    <td>Mean absolute percentage error</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h5>Model Comparison</h5>
+                <div class="table-responsive">
+                    <table class="table table-striped performance-table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Model</th>
+                                <th>CQI Classification</th>
+                                <th>SNR Regression</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>MLP</strong></td>
+                                <td>92.1% accuracy</td>
+                                <td>2.15 dB MAE</td>
+                                <td>CQI Classification</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1D CNN</strong></td>
+                                <td>90.8% accuracy</td>
+                                <td class="text-success">1.82 dB MAE ⭐</td>
+                                <td>SNR Regression</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Transformer</strong></td>
+                                <td class="text-success">93.5% accuracy ⭐</td>
+                                <td>1.95 dB MAE</td>
+                                <td>CQI Classification</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ensemble</strong></td>
+                                <td>93.2% accuracy</td>
+                                <td class="text-success">1.75 dB MAE ⭐</td>
+                                <td>Overall Best</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Training Pipeline -->
+        <!-- <section class="mb-5">
+            <h2 class="section-header">🚀 Training Pipeline</h2>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5>1. Data Preprocessing</h5>
+                    <div class="code-block">
+                        <small>
+                            # Feature Scaling<br>
+                            scaler = StandardScaler()<br>
+                            X_scaled = scaler.fit_transform(X)<br><br>
+                            # Label Encoding<br>
+                            le = LabelEncoder()<br>
+                            y_encoded = le.fit_transform(y)
+                        </small>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5>2. Model Configuration</h5>
+                    <div class="code-block">
+                        <small>
+                            BATCH_SIZE = 64<br>
+                            EPOCHS = 100<br>
+                            LEARNING_RATE = 0.001<br><br>
+                            optimizer = AdamW(<br>
+                            &nbsp;&nbsp;learning_rate=0.001,<br>
+                            &nbsp;&nbsp;weight_decay=1e-4<br>
+                            )
+                        </small>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5>3. Training Results</h5>
+                    <div class="metric-card">
+                        <h6 class="text-success">CQI Training</h6>
+                        <p class="mb-1">Best Accuracy: <strong>92.3%</strong></p>
+                        <p class="mb-1">Training Time: <strong>~5 min</strong></p>
+                        <hr>
+                        <h6 class="text-primary">SNR Training</h6>
+                        <p class="mb-1">Best MAE: <strong>1.85 dB</strong></p>
+                        <p class="mb-0">Training Time: <strong>~7 min</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+
+
+        <!-- Technologies Used -->
+        <section class="mb-5">
+            <h2 class="section-header">🛠️ Technologies Used</h2>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+                <span class="tech-badge">Python 3.8+</span>
+                <span class="tech-badge">TensorFlow/Keras</span>
+                <span class="tech-badge">NumPy</span>
+                <span class="tech-badge">Pandas</span>
+                <span class="tech-badge">Scikit-learn</span>
+                <span class="tech-badge">Matplotlib</span>
+                <span class="tech-badge">Seaborn</span>
+                <span class="tech-badge">3GPP Standards</span>
+                <span class="tech-badge">Deep Learning</span>
+                <span class="tech-badge">Signal Processing</span>
+            </div>
+        </section>
+        <!-- Project Links -->
+        <div class="d-flex gap-3 mb-5">
+            <a href="https://github.com/UsmanK7" class="btn btn-colors px-4" target="_blank">
+                <i class="bi bi-github me-2"></i>View Code
+            </a>
+            <a href="#" class="btn btn-primary px-4">
+                <i class="bi bi-file-earmark-text me-2"></i>Research Paper
+            </a>
+            <a href="#" class="btn btn-outline-success px-4">
+                <i class="bi bi-download me-2"></i>Download Dataset
+            </a>
+        </div>
+
+        <!-- Future Work -->
+        <!-- <section class="mb-5">
+            <h2 class="section-header">🔮 Future Enhancements</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-lightning-charge me-2"></i>Real-time Implementation
+                            </h5>
+                            <p class="card-text">Deploy models for live 5G network monitoring and adaptive resource
+                                allocation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-gear me-2"></i>Advanced Optimization</h5>
+                            <p class="card-text">Implement reinforcement learning for dynamic network parameter tuning
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-globe me-2"></i>Multi-Cell Networks</h5>
+                            <p class="card-text">Extend to complex multi-cell scenarios with inter-cell interference
+                                modeling</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-shield-check me-2"></i>Edge Computing</h5>
+                            <p class="card-text">Optimize models for edge deployment with reduced computational
+                                complexity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Contact Information -->
+        <!-- <section class="mb-5">
+            <h2 class="section-header">📞 Get In Touch</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">Interested in collaborating on wireless communication research or have
+                        questions about this project? Feel free to reach out!</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="mailto:musmankhan707@gmail.com" class="btn btn-outline-primary">
+                            <i class="bi bi-envelope me-2"></i>Email Me
+                        </a>
+                        <a href="https://www.linkedin.com/in/usman-ai/" class="btn btn-outline-primary" target="_blank">
+                            <i class="bi bi-linkedin me-2"></i>LinkedIn
+                        </a>
+                        <a href="https://github.com/UsmanK7" class="btn btn-outline-primary" target="_blank">
+                            <i class="bi bi-github me-2"></i>GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+         -->
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>

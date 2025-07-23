@@ -117,8 +117,10 @@
                 </div>
                 <div class="filter-tags">
                     <span class="tag-filter active" data-tag="all">All Projects</span>
+                    <span class="tag-filter" data-tag="artificial-intelligence">Artificial intelligence</span>
                     <span class="tag-filter" data-tag="medical-imaging">Medical Imaging</span>
                     <span class="tag-filter" data-tag="computer-vision">Computer vision</span>
+                    <span class="tag-filter" data-tag="signal-processing">Signal processing</span>
                     <span class="tag-filter" data-tag="web-development">Web Development</span>
                     <span class="tag-filter" data-tag="nlp">Natural Language Processing</span>
                     <span class="tag-filter" data-tag="mobile-app">Mobile App</span>
@@ -128,7 +130,7 @@
             <!-- Projects Grid -->
             <div class="row" id="projectsContainer">
                 <!-- Project 1 -->
-                <div class="col-lg-6 project-item" data-tags="medical-imaging computer-vision">
+                <div class="col-lg-6 project-item" data-tags="medical-imaging computer-vision artificial-intelligence">
                     <a href="projects/neuro_insight/neuro_insight.html"
                         class="hover-pointer text-decoration-none text-dark">
                         <div class="project-card">
@@ -160,31 +162,38 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="col-lg-6 project-item" data-tags="nlp deep-learning">
-                    <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=200&fit=crop"
-                            alt="Clinical NLP" class="project-img">
-                        <div class="project-content">
-                            <a href="project-clinical-nlp.html" class="project-title">Clinical Text Analysis
-                                Platform</a>
-                            <p class="project-description">NLP platform for extracting medical insights from clinical
-                                notes using transformer models. Processes thousands of documents with high accuracy for
-                                clinical decision support.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">NLP</span>
-                                <span class="project-tag">Transformers</span>
-                                <span class="project-tag">Healthcare</span>
-                                <span class="project-tag">Python</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/johndoe/clinical-nlp" target="_blank"><i
-                                        class="fab fa-github me-1"></i>GitHub</a>
-                                <a href="#" target="_blank"><i class="fas fa-external-link-alt me-1"></i>Live Demo</a>
+                <div class="col-lg-6 project-item" data-tags="signal-processing artificial-intelligence">
+                    <a href="projects/AI_channel_quality_prediction/AI_channel_quality_prediction.html"
+                        class="hover-pointer text-decoration-none text-dark">
+                        <div class="project-card">
+                            <img src="projects/AI_channel_quality_prediction/images/snr_db_predictions.png"
+                                alt="Brain MRI Analysis" class="project-img">
+                            <div class="project-content">
+                                <h5 class="project-title">AI Channel Quality Prediction for 5G and Beyond
+                                    Wireless Networks</h5>
+                                <p class="project-description">This project implements an advanced deep learning system
+                                    for predicting Channel Quality Indicator (CQI) and Signal-to-Noise Ratio (SNR) in 5G
+                                    and Beyond (B5G) wireless networks. The system uses state-of-the-art neural network
+                                    architectures to enable intelligent network optimization and resource allocation.
+
+                                </p>
+                                <div class="project-tags">
+                                    <!-- <span class="project-tag">Deep Learning</span> -->
+                                    <span class="project-tag">Artificial Intelligence</span>
+                                    <span class="project-tag">Signal processing</span>
+                                    <span class="project-tag">Wireless communication</span>
+
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/johndoe/brain-mri-detection" target="_blank"><i
+                                            class="bi bi-github me-2"></i>GitHub</a>
+                                    <a href="projects/neuro_insight/neuro_insight.html" target="_blank"><i
+                                            class="bi bi-link me-2"></i>Project details</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-
                 <!-- Project 3 -->
                 <div class="col-lg-6 project-item" data-tags="web-development">
                     <div class="project-card">
