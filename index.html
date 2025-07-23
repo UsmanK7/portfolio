@@ -60,11 +60,11 @@
                     Follow
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="mailto:john.doe@example.com"><i
+                    <li><a class="dropdown-item" href="mailto::musmankhan707@gmail.com"><i
                                 class="bi bi-envelope me-2"></i>Email</a></li>
-                    <li><a class="dropdown-item" href="https://linkedin.com/in/johndoe" target="_blank"><i
+                    <li><a class="dropdown-item" href="https://www.linkedin.com/in/usman-ai/" target="_blank"><i
                                 class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
-                    <li><a class="dropdown-item" href="https://github.com/johndoe" target="_blank"><i
+                    <li><a class="dropdown-item" href="https://github.com/UsmanK7" target="_blank"><i
                                 class="bi bi-github me-2"></i>GitHub</a></li>
                 </ul>
             </div>
@@ -85,7 +85,7 @@
                 that makes a real-world impact.
             </p>
 
-            <div class="research-interests">
+            <!-- <div class="research-interests">
                 <h3><i class="bi bi-lightbulb me-2"></i>Research Interests</h3>
                 <p class="mb-2">
                     My research focuses on the intersection of artificial intelligence and healthcare, with particular
@@ -100,7 +100,7 @@
                         visual information</li>
                     <li><strong>Machine Learning:</strong> Designing algorithms that learn and adapt from data</li>
                 </ul>
-            </div>
+            </div> -->
         </section>
 
         <!-- Projects Section -->
@@ -118,7 +118,7 @@
                 <div class="filter-tags">
                     <span class="tag-filter active" data-tag="all">All Projects</span>
                     <span class="tag-filter" data-tag="medical-imaging">Medical Imaging</span>
-                    <span class="tag-filter" data-tag="deep-learning">Deep Learning</span>
+                    <span class="tag-filter" data-tag="computer-vision">Computer vision</span>
                     <span class="tag-filter" data-tag="web-development">Web Development</span>
                     <span class="tag-filter" data-tag="nlp">Natural Language Processing</span>
                     <span class="tag-filter" data-tag="mobile-app">Mobile App</span>
@@ -128,18 +128,22 @@
             <!-- Projects Grid -->
             <div class="row" id="projectsContainer">
                 <!-- Project 1 -->
-                <div class="col-lg-6 project-item" data-tags="medical-imaging deep-learning">
+                <div class="col-lg-6 project-item" data-tags="medical-imaging computer-vision">
                     <a href="projects/neuro_insight/neuro_insight.html"
                         class="hover-pointer text-decoration-none text-dark">
                         <div class="project-card">
                             <img src="projects/neuro_insight/images/1.png" alt="Brain MRI Analysis" class="project-img">
                             <div class="project-content">
                                 <h5 class="project-title">Neuro Insight - Final year project</h5>
-                                <p class="project-description">Advanced deep learning system for automated brain tumor
-                                    detection and classification using convolutional neural networks. Achieved 94%
-                                    accuracy on validation dataset.</p>
+                                <p class="project-description">Neuro Insight is a medical web app that helps doctors
+                                    diagnose glioma brain tumors from MRI scans using deep learning. It uses Attention
+                                    U-Net for multi-region tumor segmentation and ConvNeXt-Base for classifying tumor
+                                    grades (HGG vs LGG). Built with Django, it offers an easy-to-use interface for
+                                    uploading scans, viewing results, and downloading diagnostic reports—reducing
+                                    diagnosis time from hours to seconds.</p>
                                 <div class="project-tags">
-                                    <span class="project-tag">Deep Learning</span>
+                                    <!-- <span class="project-tag">Deep Learning</span> -->
+                                    <span class="project-tag">Computer vision</span>
                                     <span class="project-tag">Medical Imaging</span>
                                     <span class="project-tag">CNN</span>
                                     <span class="project-tag">TensorFlow</span>
@@ -147,7 +151,8 @@
                                 <div class="project-links">
                                     <a href="https://github.com/johndoe/brain-mri-detection" target="_blank"><i
                                             class="bi bi-github me-2"></i>GitHub</a>
-                                    <a href="#" target="_blank"><i class="bi bi-link me-2"></i>Project details</a>
+                                    <a href="projects/neuro_insight/neuro_insight.html" target="_blank"><i
+                                            class="bi bi-link me-2"></i>Project details</a>
                                 </div>
                             </div>
                         </div>

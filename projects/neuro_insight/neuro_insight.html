@@ -60,11 +60,11 @@
           Follow
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="mailto:john.doe@example.com"><i class="bi bi-envelope me-2"></i>Email</a>
-          </li>
-          <li><a class="dropdown-item" href="https://linkedin.com/in/johndoe" target="_blank"><i
+          <li><a class="dropdown-item" href="mailto::musmankhan707@gmail.com"><i
+                class="bi bi-envelope me-2"></i>Email</a></li>
+          <li><a class="dropdown-item" href="https://www.linkedin.com/in/usman-ai/" target="_blank"><i
                 class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
-          <li><a class="dropdown-item" href="https://github.com/johndoe" target="_blank"><i
+          <li><a class="dropdown-item" href="https://github.com/UsmanK7" target="_blank"><i
                 class="bi bi-github me-2"></i>GitHub</a></li>
         </ul>
       </div>
@@ -195,10 +195,11 @@
               <h4 class="card-title"><i class="bi bi-cpu me-2"></i>AI-Driven Analysis</h4>
               <ul>
                 <LI><Strong>I have trained two deep learning models for this project</Strong></LI>
-                <li><strong>Segmentation Model:</strong> Attention U-Net model do segmentation of brain tumor in 4 labels</li>
-                <li><strong>Classification Model:</strong> ConvNeXt-Base  classifies tumors as HGG
+                <li><strong>Segmentation Model:</strong> Attention U-Net model do segmentation of brain tumor in 4
+                  labels</li>
+                <li><strong>Classification Model:</strong> ConvNeXt-Base classifies tumors as HGG
                   (aggressive) or LGG (slow-growing)</li>
-                
+
               </ul>
             </div>
           </div>
@@ -239,11 +240,11 @@
 
     <!-- Technical Implementation Section -->
     <section class="mb-5">
-      <h2 class="section-header">Technical Implementation</h2>
+      <h2 class="section-header">Deep learning Implementation</h2>
 
       <!-- Data Splitting Strategy -->
       <div class="mb-4">
-        <h3>Data Splitting Strategy</h3>
+        <h4>1- Data Splitting Strategy</h4>
         <p>To train and evaluate our model effectively we split our dataset into three parts:</p>
         <div class="row">
           <div class="col-md-6">
@@ -276,7 +277,7 @@
 
       <!-- Data Preprocessing Pipeline -->
       <div class="mb-4">
-        <h3>Data Preprocessing Pipeline</h3>
+        <h4>2- Data Preprocessing Pipeline</h4>
         <p>High resolution 3D MRI scans consume significant memory, so we implemented a data generator with
           preprocessing steps for memory efficiency:</p>
 
@@ -329,13 +330,18 @@
           </div>
         </div>
       </div>
-      <div class="text-center">
-        <img src="images/one-hot.png" class="img-fluid" alt="One-hot encoded segmentation" style="max-width: 600px;"> 
+      <div class="container mb-4">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center">
+            <img src="images/one-hot.png" class="img-fluid rounded shadow-sm" alt="One-hot encoded segmentation">
+          </div>
+        </div>
       </div>
+
 
       <!-- Model Architecture -->
       <div class="mb-4 model-architecture p-4">
-        <h3>Model Architecture: Attention U-Net for Tumor Segmentation</h3>
+        <h4>Model 1: Attention U-Net for Tumor Segmentation</h4>
         <p>Our project employs a modified U-Net architecture integrated with attention gates, inspired from the paper
           "Attention U-Net: Learning Where to Look for the Pancreas" (Oktay, 2018).</p>
 
@@ -392,12 +398,122 @@
           </table>
         </div>
       </div>
+      <!-- ConvNext Transfer Learning Section -->
+      <section class="mb-5">
+        <h4>Model 2: ConvNext Base for Tumor Grade Classification</h4>
 
+        <!-- Transfer Learning Overview -->
+        <div class="mb-4">
+          <div class="card bg-light">
+            <div class="card-body">
+              <h5><i class="bi bi-arrow-repeat me-2"></i>Transfer Learning Approach</h5>
+              <p>Due to data scarcity, we used transfer learning with ConvNext (pre-trained on ImageNet) and fine-tuned
+                it for brain tumor grade classification (HGG vs LGG).</p>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <strong>Benefits:</strong> Saves computational resources and performs better with limited medical
+                  datasets.
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container mb-4">
+          <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center">
+              <img src="images/classification.png" class="img-fluid rounded shadow-sm"
+                alt="One-hot encoded segmentation">
+            </div>
+          </div>
+        </div>
+        <!-- Implementation Steps -->
+        <div class="mb-4">
+          <h5>Key Steps</h5>
+
+          <!-- Step 1 -->
+          <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="mb-2">1. Base Model Setup:</h6>
+              <p class="mb-0">We loaded the ConvNeXt-Base model using Keras with the <code>include_top=False</code>
+                option to remove its original classifier. The input size was set to <span
+                  class="badge bg-secondary">(240, 240, 3)</span>, and we froze its weights so they wouldn't update
+                during training.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="mb-2">2. Custom Classifier Head:</h6>
+              <p class="mb-2">We added our own layers on top of ConvNext to suit the binary classification task (HGG vs
+                LGG):</p>
+              <ul class="mb-0">
+                <li>Global Average Pooling</li>
+                <li>Dense layers with ReLU activation <span class="badge bg-info">(512 → 256 → 128)</span></li>
+                <li>A final Dense layer with sigmoid function for binary classification</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="mb-2">3. Compilation and Metrics:</h6>
+              <p class="mb-0">The model was compiled using the Adam optimizer, binary crossentropy loss, and metrics
+                such as accuracy, AUC, sensitivity, and specificity to evaluate medical relevance.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="mb-2">4. Callbacks:</h6>
+              <p class="mb-0"><strong>Early stopping:</strong> To stop training when the validation loss stopped
+                improving</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Model Configuration -->
+        <div class="mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="row text-center">
+                <div class="col-md-3">
+                  <strong>Optimizer</strong><br>
+                  <span class="badge bg-primary">Adam</span>
+                </div>
+                <div class="col-md-3">
+                  <strong>Loss</strong><br>
+                  <span class="badge bg-primary">Binary Crossentropy</span>
+                </div>
+                <div class="col-md-3">
+                  <strong>Metrics</strong><br>
+                  <span class="badge bg-secondary">Accuracy, AUC</span>
+                </div>
+                <div class="col-md-3">
+                  <strong>Callback</strong><br>
+                  <span class="badge bg-warning">Early Stopping</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Classification Output -->
+        <div class="alert alert-info">
+          <strong>Classification Task:</strong>
+          <span class="badge bg-danger me-2">HGG</span>High-Grade Glioma (Aggressive) vs
+          <span class="badge bg-success me-2">LGG</span>Low-Grade Glioma (Slow-growing)
+        </div>
+      </section>
       <!-- Model Evaluation -->
       <div class="mb-4">
         <h3>Model Evaluation</h3>
         <p>The trained model was tested on unseen data to evaluate performance:</p>
-
+        <h4>Performance of Brain tumor Segmentation model (Attention- Unet)</h4>
         <div class="row g-4 mb-4">
           <div class="col-md-6">
             <div class="card">
@@ -405,6 +521,15 @@
                 <h5 class="card-title">Comparison with Ground Truth</h5>
                 <p>Comparison between expert-annotated segmented masks (BraTS dataset) and our model's predictions
                   showed excellent similarity.</p>
+
+                <div class="container mb-4">
+                  <div class="row justify-content-center">
+                    <div class="col-12  text-center">
+                      <img src="images/comparison.png" class="img-fluid rounded shadow-sm"
+                        alt="One-hot encoded segmentation">
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -412,14 +537,114 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Performance Metrics</h5>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="badge bg-primary metric-badge">Accuracy: 0.9930</span>
-                  <span class="badge bg-primary metric-badge">Mean IoU: 0.5000</span>
-                  <span class="badge bg-primary metric-badge">Dice Coefficient: 0.9947</span>
-                  <span class="badge bg-primary metric-badge">Precision: 0.9938</span>
-                  <span class="badge bg-primary metric-badge">Sensitivity: 0.9924</span>
-                  <span class="badge bg-primary metric-badge">Loss: 0.0216</span>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-striped table-sm">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Evaluation Metric</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Loss</td>
+                        <td>0.0216</td>
+                      </tr>
+                      <tr>
+                        <td>Accuracy</td>
+                        <td>0.9930</td>
+                      </tr>
+                      <tr>
+                        <td>Mean IoU</td>
+                        <td>0.5000</td>
+                      </tr>
+                      <tr>
+                        <td>Dice Coefficient</td>
+                        <td>0.9947</td>
+                      </tr>
+                      <tr>
+                        <td>Precision</td>
+                        <td>0.9938</td>
+                      </tr>
+                      <tr>
+                        <td>Sensitivity (Recall)</td>
+                        <td>0.9924</td>
+                      </tr>
+                    </tbody>
+                    <caption class="text-muted text-center">Table: Performance of segmentation model on evaluation
+                      metrics</caption>
+                  </table>
                 </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4>Performance of Tumor grade Classification model (ConvNext)</h4>
+        <div class="row g-4 mb-4">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Comparison with Ground Truth</h5>
+                <p>Comparison between expert-annotated segmented masks (BraTS dataset) and our model's predictions
+                  showed excellent similarity.</p>
+
+                <div class="container mb-4">
+                  <div class="row justify-content-center">
+                    <div class="col-12  text-center">
+                      <img src="images/confusion.png" class="img-fluid rounded shadow-sm"
+                        alt="One-hot encoded segmentation">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Performance Metrics</h5>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-striped table-sm">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Evaluation Metric</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Loss</td>
+                        <td>0.0410</td>
+                      </tr>
+                      <tr>
+                        <td>Accuracy</td>
+                        <td>0.9866</td>
+                      </tr>
+                      <tr>
+                        <td>AUC</td>
+                        <td>0.9950</td>
+                      </tr>
+                      <tr>
+                        <td>Sensitivity</td>
+                        <td>0.9954</td>
+                      </tr>
+                      <tr>
+                        <td>Precision</td>
+                        <td>0.9430</td>
+                      </tr>
+                      <tr>
+                        <td>F1-Score</td>
+                        <td>0.9920</td>
+                      </tr>
+                    </tbody>
+                    <caption class="text-muted text-center">Table 5: Performance of classification model on evaluation
+                      metrics</caption>
+                  </table>
+                </div>
+
+
               </div>
             </div>
           </div>
